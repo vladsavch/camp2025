@@ -1,1 +1,64 @@
-# camp2025
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Молодіжний табір | Ідеї, які формують життя</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+    }
+    .hero-bg {
+      background: linear-gradient(to right, #4ade80, #22c55e);
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+  <header class="hero-bg text-white py-10 px-6 text-center">
+    <h1 class="text-4xl font-extrabold">Молодіжний табір</h1>
+    <p class="text-2xl mt-2 font-semibold">Ідеї, які формують життя</p>
+    <p class="mt-4 italic text-md">"І не пристосовуйтеся до цього віку, але перетворюйтеся оновленням вашого розуму..." (Рим. 12:2)</p>
+  </header>
+
+  <section class="max-w-4xl mx-auto px-6 py-10">
+    <div class="mb-10">
+      <h2 class="text-3xl font-bold mb-4">📅 Деталі події</h2>
+      <ul class="space-y-2 text-lg">
+        <li><strong>Дати:</strong> 23–27 липня</li>
+        <li><strong>Місце:</strong> поблизу селища Козин, Київська область</li>
+        <li><strong>Вартість:</strong> 2800 грн (проживання + харчування на 4 доби)</li>
+        <li><strong>Кількість місць:</strong> 250 учасників</li>
+      </ul>
+    </div>
+
+    <div class="mb-10">
+      <h2 class="text-3xl font-bold mb-4">🎤 Доповідачі</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-lg">
+        <div>Стародуб Андрій</div>
+        <div>Мадудяк Славік</div>
+        <div>Маліновський Андрій</div>
+        <div>Машніцький Микола</div>
+        <div>Бутмертчук Андрій</div>
+      </div>
+    </div>
+
+    <div class="mb-10">
+      <h2 class="text-3xl font-bold mb-4">✍️ Реєстрація</h2>
+      <p class="mb-4 text-lg">Щоб зареєструватися, перейдіть за посиланням нижче. Реєстрація дійсна лише після внесення передоплати 700 грн.</p>
+      <a href="https://your-registration-form-link.com" class="inline-block bg-green-600 text-white py-3 px-6 rounded-lg text-lg font-semibold shadow hover:bg-green-700 transition">Заповнити форму</a>
+      <p class="text-sm mt-2 text-gray-600">*Будь ласка, прикріпіть підтвердження оплати у формі.</p>
+    </div>
+
+    <div>
+      <h2 class="text-3xl font-bold mb-4">🌿 Про що цей табір?</h2>
+      <p class="text-lg leading-relaxed">Табір покликаний допомогти молоді сформувати біблійний світогляд і зрозуміти, які ідеї формують їхнє життя. Ми поговоримо про культуру, ідеології, Царство Боже та особистий вплив через істину, любов і жертовність. Це буде час близького спілкування, роздумів, молитви і дружби.</p>
+    </div>
+  </section>
+
+  <footer class="bg-gray-800 text-white text-center py-6 mt-10">
+    <p class="text-sm">З любов’ю у Христі, Молодіжний відділ Київського об’єднання МСЦ ЄХБ</p>
+  </footer>
+</body>
+</html>

@@ -1,56 +1,78 @@
-
 <!DOCTYPE html>
 <html lang="uk">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Молодіжний табір 2025</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <style>
     body {
-      font-family: 'Arial', sans-serif;
+      font-family: sans-serif;
     }
     .hero {
-      background: url('Загальне_фото.jpg') center center / cover no-repeat;
-      height: 90vh;
-    }
-    .hero-overlay {
-      background: rgba(0, 0, 0, 0.5);
+      background: linear-gradient(to right, #fbd786, #f7797d);
     }
   </style>
 </head>
-<body class="text-gray-800 bg-gray-50">
+<body class="bg-gray-50 text-gray-800">
 
-  <section class="hero flex items-center justify-center text-white">
-    <div class="hero-overlay w-full h-full flex items-center justify-center flex-col px-4 text-center">
-      <h1 class="text-5xl font-extrabold mb-4">Ідеї, які формують життя</h1>
-      <p class="text-xl max-w-xl">"І не пристосовуйтеся до цього віку, але перетворюйтеся оновленням вашого розуму..." (Рим. 12:2)</p>
-    </div>
-  </section>
+  <header class="hero text-white text-center py-12 px-4">
+    <h1 class="text-4xl font-bold">Ідеї, які формують життя</h1>
+    <p class="text-xl mt-2">"І не пристосовуйтеся до цього віку, але перетворюйтеся оновленням вашого розуму..." (Рим. 12:2)</p>
+  </header>
 
-  <section class="max-w-4xl mx-auto p-6">
-    <h2 class="text-3xl font-bold mb-4">📅 Деталі події</h2>
-    <ul class="space-y-2 text-lg">
-      <li><strong>Дати:</strong> 23–27 липня</li>
-      <li><strong>Місце:</strong> поблизу селища Козин, Київська область</li>
-      <li><strong>Вартість:</strong> 2800 грн (проживання + харчування на 4 доби)</li>
-      <li><strong>Кількість місць:</strong> 250 учасників</li>
-    </ul>
-    <h2 class="text-3xl font-bold my-6">🎤 Спікери</h2>
-    <ul class="list-disc list-inside space-y-1 text-lg">
-      <li>Стародуб Андрій</li>
-      <li>Мадудяк Славік</li>
-      <li>Маліновський Андрій</li>
-      <li>Машніцький Микола</li>
-      <li>Бутмертчук Андрій</li>
-    </ul>
-    <h2 class="text-3xl font-bold my-6">✍️ Реєстрація</h2>
-    <p class="text-lg mb-4">Реєстрація обов’язкова та дійсна після передоплати 1000 грн. Натисніть нижче для переходу до форми:</p>
-    <a href="https://forms.gle/1WNCjzqmJyeR4HtU9" class="bg-orange-500 hover:bg-orange-600 text-white py-3 px-6 rounded inline-block font-semibold text-lg">Зареєструватися</a>
-  </section>
+  <main class="max-w-4xl mx-auto p-6">
+    <section class="mb-10">
+      <h2 class="text-2xl font-semibold mb-4">📅 Деталі події</h2>
+      <ul class="space-y-2 text-lg">
+        <li><strong>Дати:</strong> 23–27 липня</li>
+        <li><strong>Місце:</strong> поблизу селища Козин, Київська область</li>
+        <li><strong>Вартість:</strong> 2800 грн (проживання + харчування на 4 доби)</li>
+        <li><strong>Учасників:</strong> 250 осіб</li>
+      </ul>
+    </section>
 
-  <footer class="text-center text-sm text-gray-600 py-6">
-    З любов’ю у Христі, Молодіжний відділ Київського об’єднання МСЦ ЄХБ
+    <section class="mb-10">
+      <h2 class="text-2xl font-semibold mb-4">🎤 Спікери</h2>
+      <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-lg">
+        <li>Стародуб Андрій</li>
+        <li>Мадудяк Славік</li>
+        <li>Маліновський Андрій</li>
+        <li>Машніцький Микола</li>
+        <li>Бутмертчук Андрій</li>
+      </ul>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="text-2xl font-semibold mb-4">📥 Реєстрація</h2>
+      <a href="https://forms.gle/1WNCjzqmJyeR4HtU9" class="inline-block bg-green-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-green-700 transition">
+        Перейти до форми
+      </a>
+      <p class="text-sm mt-2 text-gray-600">Реєстрація дійсна після внесення передоплати (1000 грн).</p>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="text-2xl font-semibold mb-4">📸 Атмосфера минулих таборів</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <img src="IMG_7733.jpg" alt="Вечір біля вогнища" class="rounded shadow">
+        <img src="IMG_8031.jpg" alt="Зібрання" class="rounded shadow">
+        <img src="Загальне фото.jpg" alt="Загальне фото" class="rounded shadow col-span-1 sm:col-span-2">
+      </div>
+    </section>
+
+    <section>
+      <h2 class="text-2xl font-semibold mb-4">💬 Що чекає на вас?</h2>
+      <ul class="list-disc list-inside text-lg space-y-2">
+        <li>Нові знайомства</li>
+        <li>Глибокі бесіди та духовні дискусії</li>
+        <li>Практика істин у повсякденному житті</li>
+        <li>Теплі вечори, ігри, кава та спілкування</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="bg-gray-200 text-center py-4 mt-10">
+    <p class="text-sm">Організатор: Молодіжний відділ Київського об’єднання МСЦ ЄХБ</p>
   </footer>
 
 </body>

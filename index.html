@@ -4,110 +4,566 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Молодіжний табір 2025</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
     body {
-      font-family: 'Segoe UI', sans-serif;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      color: #2d3748;
+      overflow-x: hidden;
     }
+    
     .hero {
-      background-image: url('https://i.imgur.com/bb2NHAV.jpg'); /* Замінити на своє загальне фото */
-      background-size: cover;
-      background-position: center;
+      min-height: 100vh;
+      background: url('https://i.imgur.com/bb2NHAV.jpg') center/cover;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      overflow: hidden;
     }
-    .overlay {
-      background: rgba(0, 0, 0, 0.6);
+    
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1;
+    }
+    
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      padding: 2rem;
+      animation: fadeInUp 1s ease-out;
+    }
+    
+    .hero h1 {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 800;
+      margin-bottom: 1rem;
+      color: #fff;
+    }
+    
+    .hero .subtitle {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      opacity: 0.9;
+    }
+    
+    .hero .verse {
+      font-size: 1.1rem;
+      font-style: italic;
+      opacity: 0.8;
+      max-width: 600px;
+      margin: 1.5rem auto;
+      line-height: 1.8;
+    }
+    
+    .floating-shapes {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 1;
+    }
+    
+    .shape {
+      position: absolute;
+      opacity: 0.1;
+      animation: float 6s ease-in-out infinite;
+    }
+    
+    .shape:nth-child(1) {
+      top: 20%;
+      left: 10%;
+      width: 80px;
+      height: 80px;
+      background: #ffd700;
+      border-radius: 50%;
+      animation-delay: 0s;
+    }
+    
+    .shape:nth-child(2) {
+      top: 60%;
+      right: 10%;
+      width: 60px;
+      height: 60px;
+      background: #ff6b6b;
+      transform: rotate(45deg);
+      animation-delay: 2s;
+    }
+    
+    .shape:nth-child(3) {
+      bottom: 20%;
+      left: 20%;
+      width: 100px;
+      height: 100px;
+      background: #4ecdc4;
+      clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+      animation-delay: 4s;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    
+    .section {
+      padding: 5rem 0;
+    }
+    
+    .section h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 3rem;
+      position: relative;
+    }
+    
+    .section h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(90deg, #3182ce, #4299e1);
+      border-radius: 2px;
+    }
+    
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    
+    .info-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+    
+    .info-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+    
+    .info-card .icon {
+      font-size: 2rem;
+      color: #3182ce;
+      margin-bottom: 1rem;
+    }
+    
+    .info-card h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: #2d3748;
+    }
+    
+    .info-card p {
+      color: #4a5568;
+      font-size: 1.1rem;
+    }
+    
+    .speakers-section {
+      background: linear-gradient(135deg, #4299e1 0%, #3182ce 100%);
+      color: white;
+    }
+    
+    .speakers-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    
+    .speaker-card {
+      background: rgba(255,255,255,0.1);
+      padding: 2rem;
+      border-radius: 15px;
+      text-align: center;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.2);
+      transition: transform 0.3s ease;
+    }
+    
+    .speaker-card:hover {
+      transform: scale(1.05);
+    }
+    
+    .speaker-card .icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      opacity: 0.9;
+    }
+    
+    .program-section {
+      background: #f7fafc;
+    }
+    
+    .program-timeline {
+      position: relative;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .program-item {
+      position: relative;
+      padding: 2rem 0 2rem 4rem;
+      border-left: 3px solid #3182ce;
+      margin-bottom: 2rem;
+    }
+    
+    .program-item::before {
+      content: '';
+      position: absolute;
+      left: -8px;
+      top: 2rem;
+      width: 16px;
+      height: 16px;
+      background: #3182ce;
+      border-radius: 50%;
+      box-shadow: 0 0 0 4px white, 0 0 0 8px #3182ce;
+    }
+    
+    .program-item h3 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #2d3748;
+      margin-bottom: 0.5rem;
+    }
+    
+    .program-item p {
+      color: #4a5568;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+    
+    .cta-section {
+      background: linear-gradient(135deg, #4299e1 0%, #3182ce 100%);
+      color: white;
+      text-align: center;
+    }
+    
+    .cta-button {
+      display: inline-block;
+      background: white;
+      color: #2d3748;
+      padding: 1rem 3rem;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      margin: 2rem 1rem;
+    }
+    
+    .cta-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+    }
+    
+    .payment-info {
+      background: rgba(255,255,255,0.1);
+      padding: 2rem;
+      border-radius: 15px;
+      backdrop-filter: blur(10px);
+      margin-top: 2rem;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+    
+    .map-section {
+      padding: 3rem 0;
+    }
+    
+    .map-container {
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      height: 400px;
+      background: linear-gradient(45deg, #4299e1, #3182ce);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.2rem;
+    }
+    
+    footer {
+      background: #2d3748;
+      color: white;
+      text-align: center;
+      padding: 3rem 0;
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+      }
+      50% {
+        transform: translateY(-20px) rotate(180deg);
+      }
+    }
+    
+    .scroll-indicator {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      color: white;
+      animation: bounce 2s infinite;
+    }
+    
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {
+        transform: translateX(-50%) translateY(0);
+      }
+      40% {
+        transform: translateX(-50%) translateY(-10px);
+      }
+      60% {
+        transform: translateX(-50%) translateY(-5px);
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .program-item {
+        padding-left: 2rem;
+      }
+      
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .speakers-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    .gradient-text {
+      background: linear-gradient(45deg, #3182ce, #4299e1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
   </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body>
 
-  <!-- Hero -->
-  <section class="hero h-screen text-white flex items-center justify-center overlay text-center px-6">
-    <div>
-      <h1 class="text-4xl md:text-5xl font-bold mb-4">Молодіжний табір 2025</h1>
-      <p class="text-xl md:text-2xl mb-2">Київське об’єднання МСЦ ЄХБ</p>
-      <p class="italic text-lg">"І не пристосовуйтеся до цього віку, але перетворюйтеся оновленням вашого розуму..."<br> — Рим. 12:2</p>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="floating-shapes">
+      <div class="shape"></div>
+      <div class="shape"></div>
+      <div class="shape"></div>
+    </div>
+    
+    <div class="hero-content">
+      <h1>Молодіжний табір 2025</h1>
+      <p class="subtitle">Київське об'єднання МСЦ ЄХБ</p>
+      <p class="verse">"І не пристосовуйтеся до цього віку, але перетворюйтеся оновленням вашого розуму..."<br><strong>— Рим. 12:2</strong></p>
+    </div>
+    
+    <div class="scroll-indicator">
+      <div style="font-size: 2rem; animation: bounce 2s infinite;">⬇️</div>
     </div>
   </section>
 
-  <!-- Подробиці -->
-  <section class="max-w-4xl mx-auto py-12 px-6 text-center">
-    <h2 class="text-3xl font-bold text-orange-600 mb-6">Основна інформація</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 text-lg">
-      <div><strong>📍 Місце:</strong> біля с. Козин (Київська обл.)</div>
-      <div><strong>📅 Дати:</strong> 23–27 липня</div>
-      <div><strong>🕓 Заїзд:</strong> 23.07 до 17:00</div>
-      <div><strong>🕑 Виїзд:</strong> 27.07 ~14:00</div>
-      <div><strong>👥 Учасники:</strong> 250 (загальна кількість — 270)</div>
-      <div><strong>💰 Вартість:</strong> 2800 грн (4 дні)</div>
-      <div><strong>🍽 Харчування:</strong> з вечері середи до обіду неділі</div>
-      <div><strong>✍️ Передоплата:</strong> 1000 грн</div>
-    </div>
-  </section>
-
-  <!-- Спікери -->
-  <section class="bg-orange-50 py-10 px-6">
-    <div class="max-w-3xl mx-auto text-center">
-      <h2 class="text-3xl font-bold text-orange-500 mb-6">🎤 Спікери</h2>
-      <ul class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-lg">
-        <li>Андрій Стародуб</li>
-        <li>Славік Мадудяк</li>
-        <li>Маліновський Андрій</li>
-        <li>Машніцький Микола</li>
-        <li>Бутмертчук Андрій</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- Програма -->
-  <section class="max-w-4xl mx-auto py-14 px-6">
-    <h2 class="text-3xl font-bold text-center text-orange-600 mb-10">📘 Програма табору</h2>
-    <div class="space-y-8 text-lg leading-relaxed">
-      <div>
-        <h3 class="text-xl font-semibold text-orange-500 mb-2">1. Два Царства — дві культури</h3>
-        <p>Що таке культура Царства Божого та як вона протистоїть культурі світу?</p>
-      </div>
-      <div>
-        <h3 class="text-xl font-semibold text-orange-500 mb-2">2. Культура світу, що формує нас</h3>
-        <p>Що формує наші переконання та рішення — Христос чи дух цього віку?</p>
-      </div>
-      <div>
-        <h3 class="text-xl font-semibold text-orange-500 mb-2">3. Як ідеї проникають у церкву?</h3>
-        <p>Толерантність, гедонізм, успішність — чим живе сучасна віруюча молодь?</p>
-      </div>
-      <div>
-        <h3 class="text-xl font-semibold text-orange-500 mb-2">4. Христос — центр культури Царства</h3>
-        <p>Які риси Христа є зразком для нас як носіїв Його Царства?</p>
-      </div>
-      <div>
-        <h3 class="text-xl font-semibold text-orange-500 mb-2">5. Як Христос формує моє життя</h3>
-        <p>Що визначає мої рішення? Хто мій авторитет? Яку ідею я несу?</p>
-      </div>
-      <div>
-        <h3 class="text-xl font-semibold text-orange-500 mb-2">6. Практична сесія: Діалог, який формує</h3>
-        <p>Як розмовляти з людьми, яких формують інші ідеї?</p>
+  <!-- Info Section -->
+  <section class="section">
+    <div class="container">
+      <h2 class="gradient-text">Основна інформація</h2>
+      <div class="info-grid">
+        <div class="info-card">
+          <div class="icon">📍</div>
+          <h3>Місце проведення</h3>
+          <p>біля с. Козин (Київська обл.)</p>
+        </div>
+        <div class="info-card">
+          <div class="icon">📅</div>
+          <h3>Дати табору</h3>
+          <p>23–27 липня 2025</p>
+        </div>
+        <div class="info-card">
+          <div class="icon">⏰</div>
+          <h3>Час заїзду/виїзду</h3>
+          <p>Заїзд: 23.07 до 17:00<br>Виїзд: 27.07 ~14:00</p>
+        </div>
+        <div class="info-card">
+          <div class="icon">👥</div>
+          <h3>Кількість учасників</h3>
+          <p>250 учасників<br>(загальна кількість — 270)</p>
+        </div>
+        <div class="info-card">
+          <div class="icon">💳</div>
+          <h3>Вартість участі</h3>
+          <p>2800 грн за 4 дні<br>Передоплата: 1000 грн</p>
+        </div>
+        <div class="info-card">
+          <div class="icon">🍽️</div>
+          <h3>Харчування</h3>
+          <p>з вечері середи до обіду неділі</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Реєстрація -->
-  <section class="bg-orange-100 py-12 px-6 text-center">
-    <h2 class="text-3xl font-bold text-orange-700 mb-6">✍️ Реєстрація</h2>
-    <p class="mb-4 text-lg">Заповни форму та прикріпи скріншот передоплати (1000 грн)</p>
-    <a href="https://forms.gle/1WNCjzqmJyeR4HtU9" target="_blank" class="inline-block bg-orange-500 text-white px-6 py-3 rounded-lg font-semibold shadow hover:bg-orange-600 transition">Зареєструватись</a>
-    <p class="mt-4 text-md text-gray-700">Реквізити для оплати:<br><strong>Карта ПриватБанк: 5169 3600 2043 8812<br>Бутмертчук Андрій</strong></p>
+  <!-- Speakers Section -->
+  <section class="section speakers-section">
+    <div class="container">
+      <h2>🎤 Спікери табору</h2>
+      <div class="speakers-grid">
+        <div class="speaker-card">
+          <div class="icon">👨‍💼</div>
+          <h3>Андрій Стародуб</h3>
+        </div>
+        <div class="speaker-card">
+          <div class="icon">👨‍💼</div>
+          <h3>Славік Мадудяк</h3>
+        </div>
+        <div class="speaker-card">
+          <div class="icon">👨‍💼</div>
+          <h3>Маліновський Андрій</h3>
+        </div>
+        <div class="speaker-card">
+          <div class="icon">👨‍💼</div>
+          <h3>Машніцький Микола</h3>
+        </div>
+        <div class="speaker-card">
+          <div class="icon">👨‍💼</div>
+          <h3>Бутмертчук Андрій</h3>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <!-- Локація -->
-  <section class="py-12 px-6 max-w-4xl mx-auto text-center">
-    <h2 class="text-3xl font-bold text-orange-600 mb-4">🗺 Локація табору</h2>
-    <p class="text-lg mb-6">Територія неподалік селища Козин, Київська область.</p>
-    <iframe class="w-full h-72 rounded-lg shadow" src="https://www.google.com/maps/embed?pb=!1m18!..." loading="lazy"></iframe>
+  <!-- Program Section -->
+  <section class="section program-section">
+    <div class="container">
+      <h2 class="gradient-text">📘 Програма табору</h2>
+      <div class="program-timeline">
+        <div class="program-item">
+          <h3>1. Два Царства — дві культури</h3>
+          <p>Що таке культура Царства Божого та як вона протистоїть культурі світу?</p>
+        </div>
+        <div class="program-item">
+          <h3>2. Культура світу, що формує нас</h3>
+          <p>Що формує наші переконання та рішення — Христос чи дух цього віку?</p>
+        </div>
+        <div class="program-item">
+          <h3>3. Як ідеї проникають у церкву?</h3>
+          <p>Толерантність, гедонізм, успішність — чим живе сучасна віруюча молодь?</p>
+        </div>
+        <div class="program-item">
+          <h3>4. Христос — центр культури Царства</h3>
+          <p>Які риси Христа є зразком для нас як носіїв Його Царства?</p>
+        </div>
+        <div class="program-item">
+          <h3>5. Як Христос формує моє життя</h3>
+          <p>Що визначає мої рішення? Хто мій авторитет? Яку ідею я несу?</p>
+        </div>
+        <div class="program-item">
+          <h3>6. Практична сесія: Діалог, який формує</h3>
+          <p>Як розмовляти з людьми, яких формують інші ідеї?</p>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <footer class="bg-orange-200 text-gray-900 text-center py-6 mt-10">
-    <p class="text-sm">З любов’ю у Христі, Молодіжний відділ Київського об’єднання МСЦ ЄХБ</p>
+  <!-- CTA Section -->
+  <section class="section cta-section">
+    <div class="container">
+      <h2>✍️ Приєднуйся до нас!</h2>
+      <p style="font-size: 1.2rem; margin-bottom: 2rem;">Заповни форму та прикріпи скріншот передоплати (1000 грн)</p>
+      
+      <a href="https://forms.gle/1WNCjzqmJyeR4HtU9" target="_blank" class="cta-button">
+        ✍️ Зареєструватись зараз
+      </a>
+      
+      <div class="payment-info">
+        <h3 style="margin-bottom: 1rem;">💳 Реквізити для оплати</h3>
+        <p style="font-size: 1.1rem;">
+          <strong>Карта ПриватБанк: 5169 3600 2043 8812</strong><br>
+          Бутмертчук Андрій
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Map Section -->
+  <section class="section map-section">
+    <div class="container">
+      <h2 class="gradient-text">🗺 Локація табору</h2>
+      <p style="text-align: center; font-size: 1.2rem; margin-bottom: 2rem;">Територія неподалік селища Козин, Київська область</p>
+      <div class="map-container">
+        <div>
+          <div style="font-size: 3rem; margin-bottom: 1rem;">🗺️</div>
+          <p>Інтерактивна карта буде доступна після реєстрації</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p style="font-size: 1.1rem;">❤️ З любов'ю у Христі</p>
+      <p>Молодіжний відділ Київського об'єднання МСЦ ЄХБ</p>
+    </div>
   </footer>
+
+  <script>
+    // Smooth scrolling for any internal links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+    
+    // Add scroll effect to hero elements
+    window.addEventListener('scroll', () => {
+      const scrolled = window.pageYOffset;
+      const hero = document.querySelector('.hero-content');
+      if (hero) {
+        hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+        hero.style.opacity = 1 - scrolled / window.innerHeight;
+      }
+    });
+  </script>
 
 </body>
 </html>

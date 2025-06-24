@@ -11,11 +11,11 @@
       font-family: 'Montserrat', sans-serif;
     }
     .hero-bg {
-      background: linear-gradient(to right, #4ade80, #22c55e);
+      background: linear-gradient(to right, #f6d365, #fda085);
     }
   </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body class="bg-orange-50 text-gray-800">
   <header class="hero-bg text-white py-10 px-6 text-center">
     <h1 class="text-4xl font-extrabold">Молодіжний табір</h1>
     <p class="text-2xl mt-2 font-semibold">Ідеї, які формують життя</p>
@@ -45,19 +45,40 @@
     </div>
 
     <div class="mb-10">
-      <h2 class="text-3xl font-bold mb-4">✍️ Реєстрація</h2>
-      <p class="mb-4 text-lg">Щоб зареєструватися, перейдіть за посиланням нижче. Реєстрація дійсна лише після внесення передоплати 700 грн.</p>
-      <a href="https://your-registration-form-link.com" class="inline-block bg-green-600 text-white py-3 px-6 rounded-lg text-lg font-semibold shadow hover:bg-green-700 transition">Заповнити форму</a>
-      <p class="text-sm mt-2 text-gray-600">*Будь ласка, прикріпіть підтвердження оплати у формі.</p>
+      <h2 class="text-3xl font-bold mb-4">💬 Що вас чекає?</h2>
+      <ul class="list-disc list-inside text-lg space-y-2">
+        <li>Нові знайомства</li>
+        <li>Цікаві бесіди</li>
+        <li>Дискусії про виклики сьогодення</li>
+        <li>Практика біблійних істин у реальному житті</li>
+        <li>Дозвілля з іграми чи горнятком кави</li>
+        <li>Затишні вечори в теплому колі</li>
+      </ul>
     </div>
 
-    <div>
+    <div class="mb-10">
       <h2 class="text-3xl font-bold mb-4">🌿 Про що цей табір?</h2>
       <p class="text-lg leading-relaxed">Табір покликаний допомогти молоді сформувати біблійний світогляд і зрозуміти, які ідеї формують їхнє життя. Ми поговоримо про культуру, ідеології, Царство Боже та особистий вплив через істину, любов і жертовність. Це буде час близького спілкування, роздумів, молитви і дружби.</p>
     </div>
+
+    <div class="mb-10">
+      <h2 class="text-3xl font-bold mb-4">📸 Атмосфера табору</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <img src="IMG_7733.JPG" alt="Табір вночі" class="rounded shadow">
+        <img src="IMG_8031.JPG" alt="Зібрання всередині" class="rounded shadow">
+        <img src="Загальне фото.jpg" alt="Загальне фото учасників" class="rounded shadow col-span-1 sm:col-span-2">
+      </div>
+    </div>
+
+    <div class="mb-10">
+      <h2 class="text-3xl font-bold mb-4">✍️ Реєстрація</h2>
+      <p class="mb-4 text-lg">Щоб зареєструватися, перейдіть за посиланням нижче. Реєстрація дійсна лише після внесення передоплати 1000 грн.</p>
+      <a href="https://forms.gle/1WNCjzqmJyeR4HtU9" class="inline-block bg-orange-500 text-white py-3 px-6 rounded-lg text-lg font-semibold shadow hover:bg-orange-600 transition">Заповнити форму</a>
+      <p class="text-sm mt-2 text-gray-600">*Будь ласка, прикріпіть підтвердження оплати у формі.</p>
+    </div>
   </section>
 
-  <footer class="bg-gray-800 text-white text-center py-6 mt-10">
+  <footer class="bg-orange-200 text-gray-900 text-center py-6 mt-10">
     <p class="text-sm">З любов’ю у Христі, Молодіжний відділ Київського об’єднання МСЦ ЄХБ</p>
   </footer>
 </body>

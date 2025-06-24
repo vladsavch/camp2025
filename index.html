@@ -1,112 +1,108 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Ідеї, які формують життя</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Табір — Ідеї, які формують життя</title>
   <style>
-    body { font-family: 'Segoe UI', sans-serif; }
-    .overlay {
-      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6));
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', sans-serif; background: #f8f9fa; color: #333; line-height: 1.6; }
+    header {
+      height: 100vh;
+      background: url('https://your-photo-url.jpg') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      padding: 40px;
+    }
+    header h1 { font-size: 3rem; margin-bottom: 10px; }
+    header p { font-size: 1.5rem; max-width: 600px; margin: auto; }
+    section {
+      padding: 60px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+    .block { margin-bottom: 40px; }
+    .block h2 { font-size: 2rem; color: #2c3e50; margin-bottom: 20px; text-align: center; }
+    .info-box {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    .info-box p { margin-bottom: 12px; }
+    a.map-link {
+      display: inline-block;
+      margin-top: 10px;
+      text-decoration: none;
+      color: #007BFF;
+      font-weight: bold;
+    }
+    footer {
+      text-align: center;
+      padding: 30px 10px;
+      background: #2c3e50;
+      color: white;
     }
   </style>
 </head>
-<body class="bg-white text-gray-800">
+<body>
 
-  <!-- Hero -->
-  <header class="relative h-screen flex items-center justify-center text-white">
-    <img src="Загальне фото.jpg" alt="Фон табору" class="absolute inset-0 w-full h-full object-cover z-0" />
-    <div class="absolute inset-0 overlay z-10"></div>
-    <div class="relative z-20 text-center px-6">
-      <p class="uppercase tracking-wide text-orange-200 text-sm mb-2">Молодіжний табір Київського об’єднання МСЦ ЄХБ</p>
-      <h1 class="text-4xl sm:text-5xl font-bold mb-4">Ідеї, які формують життя</h1>
-      <p class="italic max-w-xl mx-auto text-lg">"І не пристосовуйтеся до цього віку, але перетворюйтеся оновленням вашого розуму..." (Рим. 12:2)</p>
+  <header>
+    <div>
+      <h1>Табір Київського об’єднання МСЦ ЄХБ</h1>
+      <p><strong>Тема:</strong> Ідеї, які формують життя<br><strong>Вірш:</strong> Рим. 12:2</p>
     </div>
   </header>
 
-  <!-- Інформація -->
-  <section class="max-w-4xl mx-auto py-14 px-6">
-    <h2 class="text-3xl font-bold text-orange-600 text-center mb-8">📅 Основна інформація</h2>
-    <div class="grid sm:grid-cols-2 gap-6 text-lg">
-      <p><strong>📍 Локація:</strong> <a href="https://maps.app.goo.gl/Yw4zvLpqfXydqYUM9" class="text-blue-600 underline" target="_blank">с. Козин (Google Maps)</a></p>
-      <p><strong>📆 Дати:</strong> 23–27 липня</p>
-      <p><strong>🕓 Заїзд:</strong> до 17:00 у середу, 23 липня</p>
-      <p><strong>🕑 Від’їзд:</strong> після обіду (14:00) у неділю, 27 липня</p>
-      <p><strong>👥 Кількість місць:</strong> 250 учасників з 270 загалом</p>
-      <p><strong>💳 Вартість:</strong> 2800 грн (проживання + харчування)</p>
-      <p><strong>🍽 Харчування:</strong> з вечері середи до обіду неділі</p>
-      <p><strong>✍️ Передоплата:</strong> 1000 грн</p>
+  <section>
+    <div class="block">
+      <h2>Інформація про табір</h2>
+      <div class="info-box">
+        <p>📅 Дати проведення: <strong>23.07 – 27.07</strong></p>
+        <p>👥 Учасники: до 270 людей (реєстрація – до 250)</p>
+        <p>💵 Вартість: 650 грн з людини (4 доби = 2800 грн)</p>
+        <p>🍽 Вечеря — в середу, обід — у неділю</p>
+        <p>🚐 Заїзд <strong>23.07 до 17:00</strong>, виїзд <strong>неділя о 14:00</strong></p>
+        <p>📍 Місце: Козин</p>
+      </div>
     </div>
-  </section>
 
-  <!-- Доповідачі -->
-  <section class="bg-orange-50 py-14 px-6 text-center">
-    <h2 class="text-3xl font-bold mb-6 text-orange-600">🎤 Доповідачі</h2>
-    <div class="grid sm:grid-cols-3 gap-4 text-lg max-w-3xl mx-auto">
-      <div>Стародуб Андрій</div>
-      <div>Мадудяк Славік</div>
-      <div>Маліновський Андрій</div>
-      <div>Машніцький Микола</div>
-      <div>Бутмертчук Андрій</div>
+    <div class="block">
+      <h2>Програма</h2>
+      <div class="info-box">
+        <p><strong>Щодня:</strong></p>
+        <ul>
+          <li>07:30 – Підйом, ранкова молитва</li>
+          <li>08:00 – Сніданок</li>
+          <li>09:00 – Загальний збір, спів, тема дня</li>
+          <li>10:30 – Групи по обговореннях</li>
+          <li>12:30 – Обід</li>
+          <li>14:00 – Майстер-класи / ігри / спортивні активності</li>
+          <li>16:30 – Перекус</li>
+          <li>17:00 – Вечірня програма, спікери</li>
+          <li>19:00 – Вечеря</li>
+          <li>20:00 – Вечір прославлення, молитва</li>
+          <li>22:00 – Нічна молитва, відбій</li>
+        </ul>
+        <p><strong>Особливі блоки:</strong> День тиші, панельні дискусії, молитва за Україну, пасторський день, вечір свідоцтв.</p>
+      </div>
     </div>
-  </section>
 
-  <!-- Програма -->
-  <section class="bg-gray-50 py-14 px-6 text-gray-800">
-    <div class="max-w-4xl mx-auto text-center">
-      <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-orange-600">📘 Програма табору</h2>
-      <div class="text-left space-y-6 text-md leading-relaxed">
-        <div>
-          <h3 class="font-semibold text-lg text-orange-500">Царство Боже проти царства темряви</h3>
-          <ul class="list-disc list-inside">
-            <li>Принципи Царства Божого: любов, істина, святість, служіння, праведність</li>
-            <li>Принципи царства темряви: егоїзм, гедонізм, брехня, гордість</li>
-          </ul>
-        </div>
-
-        <div>
-          <h3 class="font-semibold text-lg text-orange-500">Ідеї, що формують культуру</h3>
-          <ul class="list-disc list-inside">
-            <li>Як світські ідеології проникають у церкву</li>
-            <li>“Євангеліє успіху”, “християнство без хреста”</li>
-            <li>Толерантність проти істини</li>
-          </ul>
-        </div>
-
-        <div>
-          <h3 class="font-semibold text-lg text-orange-500">Приклад Христа</h3>
-          <p>Ісус – центр культури Царства. Його життя, вчення, ставлення до маргіналів — приклад впливу без компромісу.</p>
-        </div>
-
-        <div>
-          <h3 class="font-semibold text-lg text-orange-500">Життя, сформоване Христом</h3>
-          <ul class="list-disc list-inside">
-            <li>Що керує мною: страх, амбіції, слава — чи послух Христу?</li>
-            <li>Хто мій авторитет? Що формує мої рішення?</li>
-          </ul>
-        </div>
-
-        <blockquote class="italic text-gray-600 border-l-4 border-orange-400 pl-4">
-          «…щоб у всьому Він мав першість.» (Кол. 1:18)
-        </blockquote>
+    <div class="block">
+      <h2>Локація</h2>
+      <div class="info-box">
+        <p>📍 Козин, Київська область</p>
+        <a class="map-link" href="https://maps.app.goo.gl/XwKYe6dTJZTjCWws6" target="_blank">Відкрити на Google Maps</a>
       </div>
     </div>
   </section>
 
-  <!-- Реєстрація -->
-  <section class="text-center py-14 px-6">
-    <h2 class="text-3xl font-bold mb-4 text-orange-600">✍️ Реєстрація</h2>
-    <p class="text-lg mb-6">Реєстрація відкрита! Заповніть форму та прикріпіть скріншот передоплати:</p>
-    <a href="https://forms.gle/1WNCjzqmJyeR4HtU9" target="_blank" class="inline-block bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-6 rounded-lg transition">
-      Перейти до форми
-    </a>
-    <p class="text-sm text-gray-600 mt-2">*Місця швидко закінчуються, поспішай!</p>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-orange-100 text-center text-sm py-6 text-gray-700">
-    З любов’ю у Христі, Молодіжний відділ Київського об’єднання МСЦ ЄХБ
+  <footer>
+    © 2025 Київське об’єднання МСЦ ЄХБ — Ідеї, які формують життя
   </footer>
+
 </body>
 </html>
